@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas Javascript</title>
+</head>
+<body>
+
+    <script>
+        let pegawai = 'Ridwan',
+            jabatan = 'manager',
+            status = 'menikah',
+            gaji,
+            tnjnganJab,
+            bpjs,
+            tnjanganKeluarga,
+            totalGaji,
+            gajiPokok;
+
+
+        if (jabatan == 'manager') {
+            gajiPokok = 15000000;
+        } else if (jabatan == 'asisten manager') {
+            gajiPokok = 10000000;
+        } else if (jabatan == 'staff') {
+            gajiPokok = 5000000;
+        }
+
+        // Tunjngan Jabatan 
+        tnjnganJab = (15 * gajiPokok) / 100;
+
+        // BPJS
+        bpjs = (10 * gajiPokok) / 100;
+
+        // Tunjangan Kelurga
+        tnjanganKeluarga = status == "menikah" ? (gajiPokok * 20) / 100 : 0;
+
+        // Gaji total
+        totalGaji = tnjnganJab + bpjs + tnjanganKeluarga + gajiPokok;
+
+        // Kotak
+        document.write(`
+        
+        <table cellpading="10" border="1" cellspacing="0">
+            <tr>
+                <td> No</td>
+                <td>Pegawai </td>
+                <td>Jabatan </td>
+                <td>Status</td>
+                <td>Gaji Pokok</td>
+                <td>Tunjangan</td>
+                <td>BPJS</td>
+                <td>Tunjangan Keluarga</td>
+                <td>Total Gaji</td>
+            </tr>
+        
+            <tr>
+                <td> 1</td>
+                <td>${pegawai}</td>
+                <td>${jabatan} </td>
+                <td>${status}</td>
+                <td>${gajiPokok}</td>
+                <td>${tnjnganJab}</td>
+                <td>${bpjs}</td>
+                <td>${tnjanganKeluarga}</td>
+                <td>${totalGaji}</td>
+            </tr>
+        </table cellpadin="10" cellspacing="0">
+
+        `);
+
+    </script>
+
+    
+    
+    
+</body>
+</html>
